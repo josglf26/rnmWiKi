@@ -1,0 +1,549 @@
+:root {
+    --rick-green: #A7FF0D;
+    --portal-blue: #00B5CC;
+    --morty-pink: #FF2A6D;
+    --dimension-purple: #6E2C8C;
+    --toxic-yellow: #D4FF00;
+    --space-black: #0D0D0D;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+header nav img {
+    max-width: 12rem;
+    max-height: 5rem;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1rem 5rem;
+    background: var(--dimension-purple);
+}
+
+header nav h2 {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    color: var(--morty-pink);
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover, 
+.menu-toggle:active {
+    background-color: var(--rick-green);
+    color: var(--space-black);
+    border-radius: 12px;
+    transition: background-color 1s ease;
+}
+
+.menu-list {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.pags {
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.pags:hover,
+.pags:active {
+    color: var(--portal-blue);
+}
+
+a, ul, li {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-bar {
+        padding: 0.75rem 1rem;
+        height: 80px;
+        position: relative;
+        background-color: var(--dimension-purple);
+    }
+
+    .menu-toggle {
+        display: block;
+        font-weight: bold;
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        transition: color 1s ease;
+    }
+
+    .menu-list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #ebffc8;
+        z-index: 10;
+        max-height: 0; 
+        overflow: hidden; 
+        transition: max-height 0.5s ease;
+    }
+
+    .menu-list.active {
+        max-height: 300px;
+    }
+
+    .pags {
+        padding: 0.5rem 1rem;
+        color: var(--white);
+        text-align: center;
+    }
+
+    .pags:hover {
+        background-color: var(--rick-green);
+        color: var(--space-black);
+    }
+
+    header nav h2 {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .rick {
+        color: var(--portal-blue);
+    }
+
+    .morty {
+        color: var(--rick-green);
+    }
+
+    header nav img {
+        display: none;
+    }
+}
+
+#container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1rem; 
+    transition: margin 0.4s ease;
+    scroll-behavior: smooth;
+}
+
+#container.shifted {
+    margin-top: 120px;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search h1 {
+    font-size: 2.5rem;
+    color: var(--dimension-purple);
+    font-weight: bold;
+    text-align: center;
+}
+
+.character {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    max-width: 750px;
+}
+
+.character input {
+    width: 100%;
+    height: 50px;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--rick-green);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.character input:focus {
+    border-color: var(--portal-blue);
+}
+
+.character button {
+    height: 50px;
+    padding: 0 1.5rem;
+    background-color: var(--portal-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.character button:hover {
+    background-color: var(--rick-green);
+    transform: scale(1.05);
+}
+
+.character button i {
+    font-size: 1.2rem;
+}
+
+
+@media screen and (max-width: 425px) {
+    .character {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .character button {
+        width: 30%;
+    }
+}
+
+.rows {
+    display: flex; 
+    gap: 2rem; 
+    align-items: flex-start;
+    margin: 2.5rem;
+}
+
+#filters {
+    flex: 1;
+    padding: 1.5rem;
+    background-color: #fff;
+}
+
+#filters ul {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center; 
+    padding: 0.5rem; 
+    width: 100%; 
+    border: none;
+}
+
+#filters h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--portal-blue);
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+#filters details {
+    border: 1px solid #e5e7eb;
+    max-height: 350px;
+    overflow: auto;
+    border-radius: 0.375rem;
+    transition: all 1s ease;
+}
+
+#filters details[open] {
+    transition: all 0.3s ease; 
+}
+
+#filters summary {
+    padding: 1rem;
+    font-weight: bolder;
+    color: var(--portal-blue);
+    cursor: pointer;
+    list-style: none;
+    background-color: var(--dimension-purple);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    transition: all 0.15s ease;
+}
+
+#filters summary:hover {
+    background-color: var(--morty-pink);
+}
+
+#filters summary::-webkit-details-marker {
+    display: none;
+}
+
+#filters summary::after {
+    content: "+"; 
+    display: inline-block; 
+    font-size: 25px;
+    font-weight: bolder;
+    color: var(--toxic-yellow);
+    text-align: center;
+    vertical-align: middle; 
+    line-height: 1; 
+}
+
+#filters details[open] summary::after {
+    content: "-";
+    font-size: 25px;
+    font-weight: bolder;
+    color: var(--toxic-yellow);
+}
+
+#filters ul {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center; 
+    padding: 0.5rem; 
+    width: 100%; 
+}
+
+.btnFilterC, .btnFilterE, .btnFilterL {
+    background-color: var(--portal-blue); 
+    color: #fff;
+    border: none; 
+    border-radius: 8px; 
+    padding: 0.5rem 1rem; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.btnFilterC:hover {
+    background-color: var(--rick-green); 
+    transform: scale(1.05); 
+}
+
+.btnFilterE:hover {
+    background-color: var(--rick-green); 
+    transform: scale(1.05); 
+}
+
+.btnFilterL:hover {
+    background-color: var(--rick-green); 
+    transform: scale(1.05); 
+}
+
+.btnFilterC:focus {
+    outline: none; 
+    background-color: var(--morty-pink); 
+    transform: scale(1.1);
+}
+
+.btnFilterE:focus {
+    outline: none; 
+    background-color: var(--morty-pink); 
+    transform: scale(1.1);
+}
+
+.btnFilterL:focus {
+    outline: none; 
+    background-color: var(--morty-pink); 
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+    .rows {
+        flex-direction: column; 
+        gap: 1.5rem; 
+        margin: 1.5rem;
+        align-items: center; 
+    }
+
+    #filters {
+        width: 100%; 
+        padding: 1rem; 
+        color: #fff; 
+    }
+
+    #filters h2 {
+        font-size: 2rem; 
+    }
+}
+
+#character-cards {
+    flex: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem; 
+    justify-content: center;
+}
+
+.character-card {
+    border: 2px solid var(--toxic-yellow);;
+    border-radius: 8px;
+    width: 250px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.character-card img {
+    width: 100%;
+    height: auto; 
+    display: block; 
+}
+
+.character-card h2 {
+    font-size: 1.5rem;
+    margin: 1rem;
+    text-align: center;
+    color: var(--rick-green); 
+}
+
+.character-card p {
+    font-size: 1rem;
+    margin: 0.5rem 1rem;
+    justify-content: center;
+}
+
+.btnsCard {
+    display: block;
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-weight: bolder;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    border: none;
+    cursor: default;
+}
+
+.btnsCard.alive {
+    background-color: #0cd45587;
+}
+
+.btnsCard.dead {
+    background-color: #d40c0c87;
+}
+
+.btnsCard.unknown {
+    color: #0D0D0D;
+    width: 95px;
+    background-color: #ffffff87;
+}
+
+.gender {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 45px;
+    right: 5px;
+    font-weight: bolder;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    border: none;
+    cursor: default;
+}
+
+.gender.male {
+    background-color: #081adc87;
+}
+
+.gender.female {
+    background-color: #dc086e87;
+}
+
+.gender.genderless {
+    background-color: #ffffff87;
+    color: #0D0D0D;
+}
+
+.gender.unknown-g {
+    background-color: #dc8b0887;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0; 
+    gap: 1rem; 
+}
+
+.pagination-container ul {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem; 
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.pagination-container ul li button {
+    width: 60px;
+    height: 40px;
+    background-color: var(--morty-pink); 
+    color: #fff; 
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-container ul li button:hover {
+    background-color: var(--rick-green);
+    transform: scale(1.05);
+}
+
+.pagination-container ul li button:focus {
+    outline: none;
+    background-color: var(--portal-blue); 
+    transform: scale(1.1);
+}
+
+.pagination-container ul li button:disabled {
+    background-color: #ccc; 
+    color: #666; 
+    cursor: not-allowed; 
+    transform: none; 
+}
+
+
+@media screen and (max-width: 768px) {
+    .pagination-container ul li button {
+        width: 50px; 
+        height: 40px;
+        font-size: 0.9rem; 
+    }
+
+    .pagination-container {
+        gap: 0.5rem; 
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .pagination-container ul li button {
+        width: 35px; 
+        height: 45px;
+        font-size: 0.8rem; 
+    }
+
+    .pagination-container {
+        margin: 1rem 0; 
+    }
+}
