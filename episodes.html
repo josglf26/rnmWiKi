@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">   
+    <link defer rel="stylesheet" href="/assets/css/style.css">
+    <script defer src="https://kit.fontawesome.com/514913ae4d.js" crossorigin="anonymous"></script>
+    <script defer src="/assets/js/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+            <nav class="nav-bar">
+                <h2><span class="rick">Rick</span> & <span class="morty">Morty</span>! </h2>
+                <img id="nav-logo" src="/assets/img/nav-logo.png" alt="Rick and Morty logo">
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <ul class="menu-list" id="menu-list">
+                    <li class="pags"><a href="index.html"><i class="fa-solid fa-person"></i> Characters</a></li>
+                    <li class="pags"><a href="episodes.html"><i class="fa-solid fa-book"></i> Episodes</a></li>
+                    <li class="pags"><a href="location.html"><i class="fa-solid fa-location-dot"></i> Locations</a></li>
+                </ul>
+            </nav>
+    </header>
+    <main id="container">
+        <div class="search">
+            <h1></h1>
+            <div class="character">
+                <input type="text" id="search-input" placeholder="Search episodes...">
+                <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <div class="rows">
+            <aside id="filters">
+                <h2>Filters</h2>
+                <details>
+                    <summary>Choose</summary>
+                    <ul>
+                        <li><button class="btnFilterE" id="1">Episode 1</button></li>
+                        <li><button class="btnFilterE" id="2">Episode 2</button></li>
+                        <li><button class="btnFilterE" id="3">Episode 3</button></li>
+                        <li><button class="btnFilterE" id="4">Episode 4</button></li>
+                        <li><button class="btnFilterE" id="5">Episode 5</button></li>
+                        <li><button class="btnFilterE" id="6">Episode 6</button></li>
+                        <li><button class="btnFilterE" id="7">Episode 7</button></li>
+                        <li><button class="btnFilterE" id="8">Episode 8</button></li>
+                        <li><button class="btnFilterE" id="9">Episode 9</button></li>
+                        <li><button class="btnFilterE" id="10">Episode 10</button></li>
+                        <li><button class="btnFilterE" id="11">Episode 11</button></li>
+                        <li><button class="btnFilterE" id="12">Episode 12</button></li>
+                        <li><button class="btnFilterE" id="13">Episode 13</button></li>
+                        <li><button class="btnFilterE" id="14">Episode 14</button></li>
+                        <li><button class="btnFilterE" id="15">Episode 15</button></li>
+                        <li><button class="btnFilterE" id="16">Episode 16</button></li>
+                        <li><button class="btnFilterE" id="17">Episode 17</button></li>
+                        <li><button class="btnFilterE" id="18">Episode 18</button></li>
+                        <li><button class="btnFilterE" id="19">Episode 19</button></li>
+                        <li><button class="btnFilterE" id="20">Episode 20</button></li>
+                        <li><button class="btnFilterE" id="21">Episode 21</button></li>
+                        <li><button class="btnFilterE" id="22">Episode 22</button></li>
+                        <li><button class="btnFilterE" id="23">Episode 23</button></li>
+                        <li><button class="btnFilterE" id="24">Episode 24</button></li>
+                        <li><button class="btnFilterE" id="25">Episode 25</button></li>
+                        <li><button class="btnFilterE" id="26">Episode 26</button></li>
+                        <li><button class="btnFilterE" id="27">Episode 27</button></li>
+                        <li><button class="btnFilterE" id="28">Episode 28</button></li>
+                        <li><button class="btnFilterE" id="29">Episode 29</button></li>
+                        <li><button class="btnFilterE" id="30">Episode 30</button></li>
+                        <li><button class="btnFilterE" id="31">Episode 31</button></li>
+                        <li><button class="btnFilterE" id="32">Episode 32</button></li>
+                        <li><button class="btnFilterE" id="33">Episode 33</button></li>
+                        <li><button class="btnFilterE" id="34">Episode 34</button></li>
+                        <li><button class="btnFilterE" id="35">Episode 35</button></li>
+                        <li><button class="btnFilterE" id="36">Episode 36</button></li>
+                        <li><button class="btnFilterE" id="37">Episode 37</button></li>
+                        <li><button class="btnFilterE" id="38">Episode 38</button></li>
+                        <li><button class="btnFilterE" id="39">Episode 39</button></li>
+                        <li><button class="btnFilterE" id="40">Episode 40</button></li>
+                        <li><button class="btnFilterE" id="41">Episode 41</button></li>
+                        <li><button class="btnFilterE" id="42">Episode 42</button></li>
+                        <li><button class="btnFilterE" id="43">Episode 43</button></li>
+                        <li><button class="btnFilterE" id="44">Episode 44</button></li>
+                        <li><button class="btnFilterE" id="45">Episode 45</button></li>
+                        <li><button class="btnFilterE" id="46">Episode 46</button></li>
+                        <li><button class="btnFilterE" id="47">Episode 47</button></li>
+                        <li><button class="btnFilterE" id="48">Episode 48</button></li>
+                        <li><button class="btnFilterE" id="49">Episode 49</button></li>
+                        <li><button class="btnFilterE" id="50">Episode 50</button></li>
+                        <li><button class="btnFilterE" id="51">Episode 51</button></li>
+                    </ul>
+                </details>
+            </aside>
+            <section id="character-cards">
+            </section>
+        </div>
+            <section id="pagination" class="pagination-container">
+                <ul>
+                    <li><button class="btnPagination" aria-label="Previous Page">Prev</button></li>
+                    <li><button class="btnPagination" aria-label="Page 1">1</button></li>
+                    <li><button class="btnPagination" aria-label="Page 2">2</button></li>
+                    <li><button class="btnPagination" aria-label="Page 3">3</button></li>
+                    <li><button class="btnPagination" aria-label="More Pages">...</button></li>
+                    <li><button class="btnPagination" aria-label="Next Page">Next</button></li>
+                </ul>
+            </section>
+    </main>
+</body>
+</html>
